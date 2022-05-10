@@ -65,6 +65,12 @@ workflows:
     jobs:
       - install
       - lint
+        requires:
+          - install
       - test
+        requires:
+          - lint
       - build
+        requires:
+          - test
 #       - deploy
