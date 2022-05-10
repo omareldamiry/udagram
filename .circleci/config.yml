@@ -3,9 +3,6 @@ orbs:
   node: circleci/node@4.1.0
   aws-cli: circleci/aws-cli@1.3.1
 jobs:
-  build:
-    docker:
-      - image: "cimg/base:stable"
   install:
     - run: 
         name: Install Backend Dependencies
@@ -28,6 +25,8 @@ jobs:
         name: Test Frontend Project
         command: npm run frontend:test
   build:
+    docker:
+      - image: "cimg/base:stable"
     - run:
         name: Build Backend Project
         command: npm run backend:build
