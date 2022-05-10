@@ -36,9 +36,9 @@ jobs:
     steps:
       - node/install
       - checkout
-      - run:
-          name: Test Backend Project
-          command: npm run backend:test
+      # - run:
+      #     name: Test Backend Project
+      #     command: npm run backend:test
       - run:
           name: Test Frontend Project
           command: npm run frontend:test
