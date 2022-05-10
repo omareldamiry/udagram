@@ -5,10 +5,13 @@ orbs:
 jobs:
   install:
     docker:
-      - image: "circleci/node"
+      - image: "cimg/base:stable"
     steps:
       - node/install
       - checkout
+      - run:
+          name: Using Yarn
+          command: corepack enable
       - run: 
           name: Install Backend Dependencies
           command: npm run backend:install
