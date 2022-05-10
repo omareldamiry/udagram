@@ -64,13 +64,13 @@ workflows:
   udagram:
     jobs:
       - install
-      - lint
+      - lint:
         requires:
           - install
-      - test
+      - test:
         requires:
           - lint
-      - build
+      - build:
         requires:
           - test
 #       - deploy
