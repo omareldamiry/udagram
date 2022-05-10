@@ -51,15 +51,15 @@ jobs:
       - run:
           name: Build Frontend Project
           command: npm run frontend:build
-  deploy:
-    docker:
-      - image: "cimg/base:stable"
-    steps:
-      - node/install
-      - checkout
-      - run:
-          name: Hello World
-          command: echo 'Hello World'
+  # deploy:
+  #   docker:
+  #     - image: "cimg/base:stable"
+  #   steps:
+  #     - node/install
+  #     - checkout
+  #     - run:
+  #         name: Hello World
+  #         command: echo 'Hello World'
 workflow:
   udagram:
     jobs:
