@@ -38,7 +38,9 @@ jobs:
       - checkout
       - run:
           name: Setup angular/cli
-          command: npm install -g @angular/cli@8.3.25
+          command: 
+          npm install -g @angular/cli@8.3.25
+          npm install @angular-devkit/build-angular@0.803.24
       - run:
           name: Test Frontend Project
           command: npm run frontend:test
