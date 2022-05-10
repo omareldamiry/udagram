@@ -43,9 +43,12 @@ jobs:
       - node/install
       - checkout
       - run:
-          name: Prepare dependencies
+          name: Enable yarn
           command: 
             corepack enable
+      - run:
+          name: Prepare dependencies
+          command: 
             npm run frontend:install
       # - run:
       #     name: Setup angular/cli
