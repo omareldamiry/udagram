@@ -41,6 +41,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      - checkout
       - run:
           name: Build Backend Project
           command: npm run backend:build
