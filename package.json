@@ -5,7 +5,7 @@
         "backend:lint": "cd udagram-api && npm run",
         "backend:test": "cd udagram-api && npm run test",
         "backend:build": "cd udagram-api && npm run build",
-        "frontend:install": "cd udagram-frontend && yarn install && yarn global add @angular/cli@8.3.25",
+        "frontend:install": "cd udagram-frontend && yarn install",
         "frontend:lint": "cd udagram-frontend && npm run lint",
         "frontend:test": "cd udagram-frontend && npm run test",
         "frontend:build": "cd udagram-frontend && npm run build"

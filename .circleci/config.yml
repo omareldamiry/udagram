@@ -36,9 +36,9 @@ jobs:
     steps:
       - node/install
       - checkout
-      # - run:
-      #     name: Test Backend Project
-      #     command: npm run backend:test
+      - run:
+          name: Setup angular/cli
+          command: npm install -g @angular/cli@8.3.25
       - run:
           name: Test Frontend Project
           command: npm run frontend:test
