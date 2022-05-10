@@ -6,33 +6,43 @@ jobs:
   build:
     docker:
       - image: "cimg/base:stable"
-    steps:
-      - node/install
-      - checkout
-      - run: 
-          name: hello
-          command: echo "Hello World!"
-#   install:
-#     - run: 
-#         name: Install Backend Dependencies
-#         command: npm run backend:install
-#     - run:
-#         name: Install Frontend Dependencies
-#         command: npm run frontend:install
-#   build:
-#     - run:
-#         name: Build Backend Project
-#         command: npm run backend:build
-#     - run:
-#         name: Build Frontend Project
-#         command: npm run frontend:build
-#   deploy:
-#     - run:
-#         name: Hello World
-#         command: echo 'Hello World'
-# workflow:
-#   udagram:
-#     jobs:
-#       - install
-#       - build
+  install:
+    - run: 
+        name: Install Backend Dependencies
+        command: npm run backend:install
+    - run:
+        name: Install Frontend Dependencies
+        command: npm run frontend:install
+  lint:
+    - run:
+        name: Lint Backend Project
+        command: npm run backend:lint
+    - run:
+        name: Lint Frontend Project
+        command: npm run frontend:lint
+  test:
+    - run:
+        name: Test Backend Project
+        command: npm run backend:test
+    - run:
+        name: Test Frontend Project
+        command: npm run frontend:test
+  build:
+    - run:
+        name: Build Backend Project
+        command: npm run backend:build
+    - run:
+        name: Build Frontend Project
+        command: npm run frontend:build
+  deploy:
+    - run:
+        name: Hello World
+        command: echo 'Hello World'
+workflow:
+  udagram:
+    jobs:
+      - install
+      - lint
+      - test
+      - build
 #       - deploy
