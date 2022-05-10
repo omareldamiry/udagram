@@ -8,6 +8,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      - checkout
       - run: 
           name: Install Backend Dependencies
           command: npm run backend:install
@@ -19,6 +20,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      - checkout
       - run:
           name: Lint Backend Project
           command: npm run backend:lint
@@ -30,6 +32,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      - checkout
       - run:
           name: Test Backend Project
           command: npm run backend:test
@@ -53,6 +56,7 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
+      - checkout
       - run:
           name: Hello World
           command: echo 'Hello World'
