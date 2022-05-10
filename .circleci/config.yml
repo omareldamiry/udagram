@@ -24,14 +24,6 @@ jobs:
       - run:
           name: Install Frontend Dependencies
           command: npm run frontend:install
-  install:
-    docker:
-      - image: "cimg/base:stable"
-    steps:
-      - node/install
-      - checkout
-      - install-backend
-      - install-frontend
   lint:
     docker:
       - image: "cimg/base:stable"
@@ -50,7 +42,7 @@ jobs:
     steps:
       - node/install
       - checkout
-      - install=frontend
+      - install-frontend
       - run:
           name: Setup angular/cli
           command: 
@@ -85,10 +77,11 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - install
+      - install-backend
+      - install-frontend
       - test:
           requires:
-            - install
+            - install-frontend
       - build:
           requires:
             - test
