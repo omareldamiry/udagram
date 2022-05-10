@@ -39,18 +39,18 @@ jobs:
       - run:
           name: Test Frontend Project
           command: npm run frontend:test
-  build:
-    docker:
-      - image: "cimg/base:stable"
-    steps:
-      - node/install
-      - checkout
-      - run:
-          name: Build Backend Project
-          command: npm run backend:build
-      - run:
-          name: Build Frontend Project
-          command: npm run frontend:build
+  # build:
+  #   docker:
+  #     - image: "cimg/base:stable"
+  #   steps:
+  #     - node/install
+  #     - checkout
+  #     - run:
+  #         name: Build Backend Project
+  #         command: npm run backend:build
+  #     - run:
+  #         name: Build Frontend Project
+  #         command: npm run frontend:build
   # deploy:
   #   docker:
   #     - image: "cimg/base:stable"
@@ -66,5 +66,5 @@ workflow:
       - install
       - lint
       - test
-      - build
+      # - build
 #       - deploy
