@@ -1,14 +1,14 @@
 
 {
     "scripts": {
-        "backend:install": "cd udagram-api && npm install && cd ..",
-        "backend:lint": "cd udagram-api && npm run test && cd ..",
-        "backend:test": "cd udagram-api && npm run test && cd ..",
-        "backend:build": "cd udagram-api && npm run build && cd ..",
-        "frontend:install": "cd udagram-frontend && npm install && cd ..",
-        "frontend:lint": "cd udagram-frontend && npm run lint && cd ..",
-        "frontend:test": "cd udagram-frontend && npm run test && cd ..",
-        "frontend:build": "cd udagram-frontend && npm run build && cd .."
+        "backend:install": "cd udagram-api && npm install",
+        "backend:lint": "cd udagram-api && npm run",
+        "backend:test": "cd udagram-api && npm run test",
+        "backend:build": "cd udagram-api && npm run build",
+        "frontend:install": "cd udagram-frontend && npm install",
+        "frontend:lint": "cd udagram-frontend && npm run lint",
+        "frontend:test": "cd udagram-frontend && npm run test",
+        "frontend:build": "cd udagram-frontend && npm run build"
     },
     "devDependencies": {}
 }
