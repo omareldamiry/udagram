@@ -72,7 +72,7 @@ workflows:
            - install
       - test:
           requires:
-            - lint
+            - install
       - build:
           requires:
             - test
