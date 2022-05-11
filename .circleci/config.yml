@@ -44,15 +44,15 @@ jobs:
           paths:
             - udagram-api/www
             - udagram-frontend/www
-  # deploy:
-  #   docker:
-  #     - image: "cimg/base:stable"
-  #   steps:
-  #     - node/install
-  #     - checkout
-  #     - run:
-  #         name: Hello World
-  #         command: echo 'Hello World'
+  deploy:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout
+      - run:
+          name: Hello World
+          command: npm run backend:deploy
 workflows:
   udagram:
     jobs:
@@ -60,4 +60,4 @@ workflows:
       - build:
           requires:
             - install
-#       - deploy
+      - deploy
