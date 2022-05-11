@@ -5,10 +5,12 @@
         "backend:lint": "cd udagram-api && npm run",
         "backend:test": "cd udagram-api && npm run test",
         "backend:build": "cd udagram-api && npm run build",
+        "backend:deploy": "cd udagram-api && npm run deploy",
         "frontend:install": "cd udagram-frontend && yarn install",
         "frontend:lint": "cd udagram-frontend && npm run lint",
         "frontend:test": "cd udagram-frontend && npm run test",
-        "frontend:build": "cd udagram-frontend && npm run build"
+        "frontend:build": "cd udagram-frontend && npm run build",
+        "frontend:deploy": "cd udagram-frontend && npm run deploy"
     },
     "devDependencies": {}
 }
