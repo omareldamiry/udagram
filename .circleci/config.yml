@@ -21,7 +21,7 @@ jobs:
           name: Install Frontend Dependencies
           command: npm run frontend:install
       - save_cache:
-          key: udagram-{{ .Revision }}
+          key: udagram-cache
           paths:
             - udagram-api/node_modules
             - udagram-frontend/node_modules
@@ -33,7 +33,7 @@ jobs:
           node-version: '16.13'
       - checkout
       - restore_cache:
-          key: udagram-{{ .Revision }}
+          key: udagram-cache
       - run:
           name: Build Backend Project
           command: npm run backend:build
@@ -41,7 +41,7 @@ jobs:
           name: Build Frontend Project
           command: npm run frontend:build
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /
           paths:
             - udagram-api/www
             - udagram-frontend/www
@@ -54,7 +54,7 @@ jobs:
       - eb/setup
       - checkout
       - attach_workspace:
-          at: /tmp/workspace
+          at: /
       - run:
           name: Deploy Backend
           command: npm run backend:deploy
