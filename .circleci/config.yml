@@ -41,6 +41,7 @@ jobs:
           name: Build Frontend Project
           command: npm run frontend:build
       - persist_to_workspace:
+          root: /
           paths:
             - udagram-api/www
             - udagram-frontend/www
