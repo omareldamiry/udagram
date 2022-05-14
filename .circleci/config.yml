@@ -54,7 +54,7 @@ jobs:
       - eb/setup
       - checkout
       - attach_workspace:
-          at: /
+          at: /home/circleci/project/
       - run:
           name: Deploy Backend
           command: npm run backend:deploy
