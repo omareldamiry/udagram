@@ -40,8 +40,9 @@ jobs:
       - run:
           name: Build Frontend Project
           command: npm run frontend:build
+      - run: mkdir -p bundles
       - persist_to_workspace:
-          root: /udagram
+          root: bundles
           paths:
             - udagram-api/www
             - udagram-frontend/www
@@ -54,7 +55,7 @@ jobs:
       - eb/setup
       - checkout
       - attach_workspace:
-          at: /udagram
+          at: /bundles
       - run:
           name: Deploy Backend
           command: npm run backend:deploy
